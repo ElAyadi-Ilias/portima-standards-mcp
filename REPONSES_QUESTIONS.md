@@ -1,16 +1,20 @@
 # Réponses à vos questions - Portima Standards MCP
 
-> **🔥 MISE À JOUR - Contexte Portima spécifique**
+> **🔥 MISE À JOUR - Solution simplifiée pour Portima !**
 > 
-> Suite aux informations complémentaires sur votre infrastructure (~50 développeurs, APIs sur K8s/Azure, NuGet privé, templates de déploiement), une **recommandation spécifique pour Portima** a été créée.
+> Suite à votre excellent retour : **Pourquoi faire un NuGet si on déploie sur K8s ?**
 > 
-> **👉 Voir [RECOMMANDATION_PORTIMA.md](./RECOMMANDATION_PORTIMA.md) pour la solution optimale adaptée à votre contexte !**
+> **Vous avez raison !** Solution mise à jour pour déployer directement comme une API.
 > 
-> **TL;DR :** NuGet Global Tool (Phase 1) → Déploiement K8s avec Helm (Phase 2)
-> - Réutilise votre infrastructure existante
-> - Installation dev en 1 commande
-> - Pattern familier (comme vos APIs)
-> - Production-ready en 2-4 semaines
+> **👉 Voir [SOLUTION_SIMPLIFIEE_K8S.md](./SOLUTION_SIMPLIFIEE_K8S.md) pour la solution optimale !** ⭐
+> 
+> **TL;DR :** Déployez le MCP server comme une API standard sur K8s
+> - Réutilise vos templates API existants
+> - Configuration dev en 1 ligne JSON
+> - Production-ready en 2 semaines
+> - Pas de NuGet tool intermédiaire
+> 
+> *(L'ancienne recommandation 2 phases NuGet+K8s reste disponible dans [RECOMMANDATION_PORTIMA.md](./RECOMMANDATION_PORTIMA.md) pour référence)*
 
 ---
 

@@ -2,20 +2,27 @@
 
 Serveur MCP permettant à GitHub Copilot d'accéder au repository `sample-api` pour consulter les standards de développement .NET Portima.
 
-> **🔥 NOUVEAU !** Recommandation spécifique pour votre infrastructure (50 devs, K8s, NuGet) disponible !
+> **🔥 MISE À JOUR - Solution simplifiée !**
 > 
-> **👉 Voir [RECOMMANDATION_PORTIMA.md](./RECOMMANDATION_PORTIMA.md) pour la solution optimale**
+> Pour Portima (K8s/Azure) : Déployez le MCP comme une API standard, pas besoin de NuGet tool !
+> 
+> **👉 Voir [SOLUTION_SIMPLIFIEE_K8S.md](./SOLUTION_SIMPLIFIEE_K8S.md) - Déploiement direct sur K8s (2 semaines)** ⭐
 
 ## 📚 Documentation complète
 
 ### 🎯 Pour commencer (SELON VOTRE PROFIL)
 
-**Vous êtes chez Portima avec l'infrastructure K8s/NuGet ?**
-- **[RECOMMANDATION_PORTIMA.md](./RECOMMANDATION_PORTIMA.md)** - **LISEZ CECI EN PREMIER** ⭐
-  - Solution NuGet Global Tool + K8s
-  - Réutilise votre infrastructure existante
-  - Plan de déploiement 2-4 semaines
-  - Helm charts et manifests K8s prêts
+**Vous êtes chez Portima avec infrastructure K8s/Azure ?**
+- **[SOLUTION_SIMPLIFIEE_K8S.md](./SOLUTION_SIMPLIFIEE_K8S.md)** - **NOUVELLE RECOMMANDATION** ⭐⭐⭐
+  - Déployer directement comme une API (pas de NuGet)
+  - Réutilise vos templates K8s existants
+  - Production-ready en 2 semaines
+  - 1 seul déploiement, configuration dev en 1 ligne
+
+**Documentation détaillée (pour référence) :**
+- **[RECOMMANDATION_PORTIMA.md](./RECOMMANDATION_PORTIMA.md)** - Approche en 2 phases (NuGet + K8s)
+  - Option plus complexe avec NuGet tool intermédiaire
+  - Gardé pour référence
 
 **Vous explorez le projet ou avez une infrastructure différente ?**
 - **[REPONSES_QUESTIONS.md](./REPONSES_QUESTIONS.md)** - Réponses générales aux questions
