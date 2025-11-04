@@ -29,6 +29,7 @@ bld/
 # Secrets and credentials
 *.env
 .env.local
+appsettings.json
 appsettings.Development.json
 secrets.json
 

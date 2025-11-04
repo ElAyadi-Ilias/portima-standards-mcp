@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using Microsoft.TeamFoundation.SourceControl.WebApi;
 using Microsoft.VisualStudio.Services.Common;
 using Microsoft.VisualStudio.Services.WebApi;
@@ -8,19 +9,21 @@ namespace PortimaStandardsMcp
 {
     public class PortimaDevOpsService
     {
-        private const string OrgUrl = "https://dev.azure.com/tfsportima";
+        private readonly string _orgUrl;
         private readonly string _pat;
 
-        public PortimaDevOpsService()
+        public PortimaDevOpsService(IConfiguration configuration)
         {
-            _pat = Environment.GetEnvironmentVariable("AZURE_DEVOPS_PAT") 
-                ?? throw new Exception("La variable d'environnement AZURE_DEVOPS_PAT n'est pas définie. Veuillez configurer votre Personal Access Token.");
+            _orgUrl = configuration["AzureDevOps:OrganizationUrl"] 
+                ?? throw new Exception("Azure DevOps organization URL is not configured in appsettings.json");
+            _pat = configuration["AzureDevOps:PersonalAccessToken"] 
+                ?? throw new Exception("Personal Access Token is not configured in appsettings.json");
         }
 
         private GitHttpClient GetGitClient()
         {
             var creds = new VssBasicCredential(string.Empty, _pat);
-            var connection = new VssConnection(new Uri(OrgUrl), creds);
+            var connection = new VssConnection(new Uri(_orgUrl), creds);
             return connection.GetClient<GitHttpClient>();
         }
 
@@ -41,7 +44,7 @@ namespace PortimaStandardsMcp
                 });
 
                 return items
-                    .Where(i => !i.IsFolder && (i.Path.EndsWith(".cs") || i.Path.EndsWith(".config"))) // ou extensions pertinentes
+                    .Where(i => !i.IsFolder && (i.Path.EndsWith(".cs") || i.Path.EndsWith(".config"))) // or other relevant extensions
                     .Select(i => i.Path)
                     .OrderBy(p => p)
                     .ToList();
