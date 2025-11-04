@@ -2,6 +2,55 @@
 
 Serveur MCP permettant à GitHub Copilot d'accéder au repository `sample-api` pour consulter les standards de développement .NET Portima.
 
+> **🔥 MISE À JOUR - Solution simplifiée !**
+> 
+> Pour Portima (K8s/Azure) : Déployez le MCP comme une API standard, pas besoin de NuGet tool !
+> 
+> **👉 Voir [SOLUTION_SIMPLIFIEE_K8S.md](./SOLUTION_SIMPLIFIEE_K8S.md) - Déploiement direct sur K8s (2 semaines)** ⭐
+
+## 📚 Documentation complète
+
+### 🎯 Pour commencer (SELON VOTRE PROFIL)
+
+**Vous êtes chez Portima avec infrastructure K8s/Azure ?**
+- **[SOLUTION_SIMPLIFIEE_K8S.md](./SOLUTION_SIMPLIFIEE_K8S.md)** - **NOUVELLE RECOMMANDATION** ⭐⭐⭐
+  - Déployer directement comme une API (pas de NuGet)
+  - Réutilise vos templates K8s existants
+  - Production-ready en 2 semaines
+  - 1 seul déploiement, configuration dev en 1 ligne
+
+**Documentation détaillée (pour référence) :**
+- **[RECOMMANDATION_PORTIMA.md](./RECOMMANDATION_PORTIMA.md)** - Approche en 2 phases (NuGet + K8s)
+  - Option plus complexe avec NuGet tool intermédiaire
+  - Gardé pour référence
+
+**Vous explorez le projet ou avez une infrastructure différente ?**
+- **[REPONSES_QUESTIONS.md](./REPONSES_QUESTIONS.md)** - Réponses générales aux questions
+
+### 📖 Documentation détaillée
+- **[DOCUMENTATION_PROJET.md](./DOCUMENTATION_PROJET.md)** - Analyse complète du projet, comparaison avec solutions existantes
+- **[DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)** - Guide détaillé des options de déploiement (local, global tool, serveur centralisé, container)
+- **[IMPROVEMENT_PLAN.md](./IMPROVEMENT_PLAN.md)** - Plan d'amélioration avec roadmap et priorités
+
+## 🎯 Qu'est-ce que ce projet fait ?
+
+Ce serveur MCP permet aux développeurs Portima de demander à GitHub Copilot :
+
+```
+"Comment sample-api implémente-t-il OpenTelemetry ?"
+"Montre-moi la structure du Program.cs de sample-api"
+"Quelles sont les bonnes pratiques de configuration dans sample-api ?"
+```
+
+Et Copilot **accède directement au code de sample-api** dans Azure DevOps pour répondre avec des exemples concrets et à jour.
+
+### Avantages
+
+✅ Documentation toujours à jour (le code est la source de vérité)
+✅ Exemples concrets du vrai code Portima
+✅ Intégré dans le workflow (directement dans VS Code/Visual Studio)
+✅ Standardisation du code entre projets
+
 ## Prérequis
 
 - .NET 9.0 SDK
@@ -40,6 +89,8 @@ Posez des questions à Copilot :
 - "Comment implémenter OpenTelemetry selon sample-api ?"
 - "Montre-moi la structure du Program.cs de sample-api"
 - "Compare mon logging avec les standards Portima"
+- "Quelles sont les dépendances utilisées dans sample-api ?"
+- "Comment est configuré le logging dans sample-api ?"
 
 ## Outils disponibles
 
