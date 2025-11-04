@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PortimaStandardsMcp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8359de3ba32f268e8478931757a89db958d9e21")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+937e8c53411b885c3c5d06d31913d997b052e7f3")]
 [assembly: System.Reflection.AssemblyProductAttribute("PortimaStandardsMcp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PortimaStandardsMcp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
