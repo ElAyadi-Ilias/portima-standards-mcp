@@ -2,12 +2,23 @@
 
 Serveur MCP permettant à GitHub Copilot d'accéder au repository `sample-api` pour consulter les standards de développement .NET Portima.
 
-> **🎯 Nouveau !** Documentation complète disponible - Voir ci-dessous pour réponses à vos questions sur le projet et son déploiement.
+> **🔥 NOUVEAU !** Recommandation spécifique pour votre infrastructure (50 devs, K8s, NuGet) disponible !
+> 
+> **👉 Voir [RECOMMANDATION_PORTIMA.md](./RECOMMANDATION_PORTIMA.md) pour la solution optimale**
 
 ## 📚 Documentation complète
 
-### 🔥 Pour commencer (LISEZ CECI EN PREMIER)
-- **[REPONSES_QUESTIONS.md](./REPONSES_QUESTIONS.md)** - **RÉPONSES DIRECTES** à vos questions sur le projet, le déploiement, et les recommandations
+### 🎯 Pour commencer (SELON VOTRE PROFIL)
+
+**Vous êtes chez Portima avec l'infrastructure K8s/NuGet ?**
+- **[RECOMMANDATION_PORTIMA.md](./RECOMMANDATION_PORTIMA.md)** - **LISEZ CECI EN PREMIER** ⭐
+  - Solution NuGet Global Tool + K8s
+  - Réutilise votre infrastructure existante
+  - Plan de déploiement 2-4 semaines
+  - Helm charts et manifests K8s prêts
+
+**Vous explorez le projet ou avez une infrastructure différente ?**
+- **[REPONSES_QUESTIONS.md](./REPONSES_QUESTIONS.md)** - Réponses générales aux questions
 
 ### 📖 Documentation détaillée
 - **[DOCUMENTATION_PROJET.md](./DOCUMENTATION_PROJET.md)** - Analyse complète du projet, comparaison avec solutions existantes

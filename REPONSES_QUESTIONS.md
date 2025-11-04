@@ -1,5 +1,19 @@
 # Réponses à vos questions - Portima Standards MCP
 
+> **🔥 MISE À JOUR - Contexte Portima spécifique**
+> 
+> Suite aux informations complémentaires sur votre infrastructure (~50 développeurs, APIs sur K8s/Azure, NuGet privé, templates de déploiement), une **recommandation spécifique pour Portima** a été créée.
+> 
+> **👉 Voir [RECOMMANDATION_PORTIMA.md](./RECOMMANDATION_PORTIMA.md) pour la solution optimale adaptée à votre contexte !**
+> 
+> **TL;DR :** NuGet Global Tool (Phase 1) → Déploiement K8s avec Helm (Phase 2)
+> - Réutilise votre infrastructure existante
+> - Installation dev en 1 commande
+> - Pattern familier (comme vos APIs)
+> - Production-ready en 2-4 semaines
+
+---
+
 ## ✅ Est-ce que c'est ce que fait le projet ?
 
 **OUI, ABSOLUMENT !** 
@@ -332,39 +346,46 @@ J'ai vu plusieurs approches similaires :
 
 ## 📋 Plan d'action concret (ce que vous devez faire)
 
-### Cette semaine
+> **💡 Pour votre contexte spécifique (50 devs, K8s, NuGet), consultez [RECOMMANDATION_PORTIMA.md](./RECOMMANDATION_PORTIMA.md) pour le plan détaillé adapté à Portima !**
 
-1. **Lire les 3 documents** que j'ai créés
-   - DOCUMENTATION_PROJET.md
-   - DEPLOYMENT_GUIDE.md
+### Cette semaine - Phase 1 : NuGet Global Tool
+
+1. **Lire la recommandation Portima**
+   - [RECOMMANDATION_PORTIMA.md](./RECOMMANDATION_PORTIMA.md) ← **Commencez ici !**
+   - DEPLOYMENT_GUIDE.md (section Option 2)
    - IMPROVEMENT_PLAN.md
 
-2. **Décider du mode de déploiement**
-   - Je recommande : .NET Global Tool (Option 2)
+2. **Modifier le projet pour NuGet Tool**
+   - Mettre à jour .csproj (PackAsTool=true)
+   - Modifier Program.cs (config flexible)
+   - Build et pack
 
-3. **Implémenter les améliorations prioritaires**
-   - Types de fichiers étendus (1h)
-   - Cache simple (2h)
-   - Meilleure gestion erreurs (1h)
+3. **Publier sur votre NuGet Portima**
+   - Push vers votre feed NuGet privé
+   - Tester installation : `dotnet tool install -g Portima.Standards.Mcp`
 
-### Semaine prochaine
-
-4. **Packager en Global Tool**
-   - Suivre DEPLOYMENT_GUIDE.md section "Option 2"
-   - Publier sur Azure Artifacts
-
-5. **Tester avec groupe pilote**
-   - 3-5 développeurs volontaires
+4. **Groupe pilote**
+   - 5 développeurs volontaires
+   - Tester installation et usage
    - Collecter feedback
 
-### Dans 2 semaines
+### Semaine prochaine - Phase 2 : K8s Deployment
 
-6. **Ajuster selon feedback**
+5. **Créer infrastructure K8s**
+   - Dockerfile pour le serveur MCP
+   - Manifests K8s ou Helm chart (comme vos templates existants)
+   - Setup Redis pour cache partagé
 
-7. **Déployer à toute l'équipe**
-   - Email avec instructions
-   - Session de démo (optionnel)
-   - Support pendant rollout
+6. **Déployer sur AKS**
+   - 3 replicas pour haute disponibilité
+   - Service account PAT (au lieu de 50 PATs individuels)
+   - Ingress + TLS
+
+7. **Migration développeurs**
+   - Config VS Code vers serveur centralisé
+   - Documentation mise à jour
+
+### Dans 2-4 semaines - Rollout complet
 
 ---
 
