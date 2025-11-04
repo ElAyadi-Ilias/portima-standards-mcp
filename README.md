@@ -2,6 +2,12 @@
 
 Serveur MCP permettant à GitHub Copilot d'accéder au repository `sample-api` pour consulter les standards de développement .NET Portima.
 
+## 📚 Documentation complète
+
+- **[DOCUMENTATION_PROJET.md](./DOCUMENTATION_PROJET.md)** - Analyse complète du projet, comparaison avec solutions existantes, et réponses à vos questions
+- **[DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)** - Guide détaillé des différentes options de déploiement (local, global tool, serveur centralisé, container)
+- **[IMPROVEMENT_PLAN.md](./IMPROVEMENT_PLAN.md)** - Plan d'amélioration avec roadmap et priorités
+
 ## Prérequis
 
 - .NET 9.0 SDK
@@ -40,6 +46,8 @@ Posez des questions à Copilot :
 - "Comment implémenter OpenTelemetry selon sample-api ?"
 - "Montre-moi la structure du Program.cs de sample-api"
 - "Compare mon logging avec les standards Portima"
+- "Quelles sont les dépendances utilisées dans sample-api ?"
+- "Comment est configuré le logging dans sample-api ?"
 
 ## Outils disponibles
 
