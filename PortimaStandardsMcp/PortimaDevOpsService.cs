@@ -9,13 +9,16 @@ namespace PortimaStandardsMcp
     public class PortimaDevOpsService
     {
         private const string OrgUrl = "https://dev.azure.com/tfsportima";
-        private readonly string _pat = "YourPersonalAccessToken"; 
+        private readonly string _pat;
+
+        public PortimaDevOpsService()
+        {
+            _pat = Environment.GetEnvironmentVariable("AZURE_DEVOPS_PAT") 
+                ?? throw new Exception("La variable d'environnement AZURE_DEVOPS_PAT n'est pas définie. Veuillez configurer votre Personal Access Token.");
+        }
 
         private GitHttpClient GetGitClient()
         {
-            if (string.IsNullOrWhiteSpace(_pat))
-                throw new Exception("La variable d'environnement AZURE_DEVOPS_EXT_PAT n'est pas définie.");
-
             var creds = new VssBasicCredential(string.Empty, _pat);
             var connection = new VssConnection(new Uri(OrgUrl), creds);
             return connection.GetClient<GitHttpClient>();
