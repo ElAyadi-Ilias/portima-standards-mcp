@@ -1,0 +1,39 @@
+{
+  "inputs": [
+    {
+      "id": "ado_org",
+      "type": "promptString",
+      "description": "Azure DevOps organization URL"
+    },
+    {
+      "id": "ado_project",
+      "type": "promptString",
+      "description": "Azure DevOps project name"
+    },
+    {
+      "id": "ado_repo",
+      "type": "promptString",
+      "description": "Azure DevOps repository name"
+    },
+    {
+      "id": "branch",
+      "type": "promptString",
+      "description": "Branch name"
+    }
+  ],
+  "servers": {
+    "microsoft.docs.mcp": {
+      "type": "http",
+      "url": "https://learn.microsoft.com/api/mcp"
+    },
+    "Azure-Devops-Mcp": {
+      "type": "stdio",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "C:/Users/IliasElAyadi/source/repos/portima-standards-mcp/PortimaStandardsMcp/PortimaStandardsMcp.csproj"
+      ]
+    }
+  }
+}
